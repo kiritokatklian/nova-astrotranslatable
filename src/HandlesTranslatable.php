@@ -2,21 +2,23 @@
 
 namespace Kiritokatklian\NovaAstrotranslatable;
 
+use Illuminate\Contracts\Validation\Validator as ValidatorContract;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Resource;
 
 trait HandlesTranslatable
 {
     /**
      * Override the default formatRules methods to add the translatable rulesFor functionality.
      *
-     * @param \Laravel\Nova\Http\Requests\NovaRequest $request
-     * @param array $rules
+     * @param NovaRequest $request
+     * @param array       $rules
      *
      * @return array
      */
-    protected static function formatRules(NovaRequest $request, array $rules)
+    protected static function formatRules(NovaRequest $request, array $rules): array
     {
         $rules = parent::formatRules($request, $rules);
 
@@ -30,11 +32,11 @@ trait HandlesTranslatable
                 $newRuleAttribute = $attribute;
                 $pos = strrpos($attribute, '.*');
                 if ($pos !== false) $newRuleAttribute = substr_replace($attribute, '', $pos, strlen('.*'));
-                $newRuleAtrribute = "{$newRuleAttribute}.{$locale}";
+                $newRuleAttribute = "$newRuleAttribute.$locale";
 
                 // We copy the locale rule into the rules array
                 // i.e. ['name.fr' => ['required']]
-                $rules[$newRuleAtrribute] = array_merge(
+                $rules[$newRuleAttribute] = array_merge(
                     Arr::except($attributeRules, ['translatable']),
                     $localeRules
                 );
@@ -71,7 +73,7 @@ trait HandlesTranslatable
         })->all();
     }
 
-    public static function validatorForCreation(NovaRequest $request)
+    public static function validatorForCreation(NovaRequest $request): ValidatorContract
     {
         // Get rules before $request->all() call
         $rules = static::rulesForCreation($request);
@@ -82,7 +84,7 @@ trait HandlesTranslatable
             });
     }
 
-    public static function validatorForUpdate(NovaRequest $request, $resource = null)
+    public static function validatorForUpdate(NovaRequest $request, ?Resource $resource = null): ValidatorContract
     {
         // Get rules before $request->all() call
         $rules = static::rulesForUpdate($request, $resource);
