@@ -1,27 +1,23 @@
 <?php
 
-
-
 return [
 
     /**
      * The locales which the `translatable` wrapper will use by default.
      *
      * Can be a:
-     *  - Keyed array (['en' => 'English])
+     *  - Keyed array (['en' => 'English'])
      *  - Callable that returns a keyed array
      */
     'locales' => ['en' => 'English'],
 
-
     /**
      * If enabled, the Nova's current locale will always be displayed as
-     * the first locale in the tabs arrangement.
+     * the first locale in the tab's arrangement.
      *
      * If disabled, the locales array order is respected.
      */
     'prioritize_nova_locale' => true,
-
 
     /**
      * Defines the display type for the translatable tabs.
@@ -33,7 +29,7 @@ return [
     /**
      * Defines the display type for the translatable select.
      *
-     * Available options are: 'left-absolute', 'left-static', 'right-absolute', 'right-static
+     * Available options are: 'left-absolute', 'left-static', 'right-absolute', 'right-static'
      */
     'locale_select.display_type' => 'right-absolute',
 
@@ -42,7 +38,7 @@ return [
      * locales of the field's value when saving the field from the defined "default"
      * locale.
      *
-     * Set to locale key (`en`, `ru`, etc) or null to enable/disable.
+     * Set to locale key (`en`, `ru`, etc.) or null to enable/disable.
      */
     'fill_other_locales_from' => null,
 
