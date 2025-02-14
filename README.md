@@ -3,13 +3,22 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/kiritokatklian/nova-astrotranslatable.svg?style=flat-square)](https://packagist.org/packages/kiritokatklian/nova-astrotranslatable)
 [![Total Downloads](https://img.shields.io/packagist/dt/kiritokatklian/nova-astrotranslatable.svg?style=flat-square)](https://packagist.org/packages/kiritokatklian/nova-astrotranslatable)
 
-This [Laravel Nova](https://nova.laravel.com) allows you to make any input field [astrotomic/laravel-translatable](https://github.com/astrotomic/laravel-translatable) compatible and localisable.
+This [Laravel Nova](https://nova.laravel.com) allows you to make any input field [astrotomic/laravel-translatable](https://github.com/astrotomic/laravel-translatable) compatible and localizable.
 
 ## Requirements
 
-- `PHP: >=8.0`
-- `laravel/nova: ^4.12`
+- `PHP: >=8.2`
+- `laravel/nova: ^5.0`
 - `astrotomic/laravel-translatable: ^11.10`
+
+## Version Compatibility
+
+With the release of Nova 5.0, there are now two separate versions of Nova Translatable. Unfortunately due to the nature of the update, the new one isn't backwards compatible. So please choose your version accordingly.
+
+| Laravel Nova | Nova Translatable |
+|:------------:|:-----------------:|
+|     4.0      |        2.1        |
+|     5.0      |        5.0        |
 
 ## Features
 
@@ -17,7 +26,7 @@ This [Laravel Nova](https://nova.laravel.com) allows you to make any input field
 - **Supports default validation automatically**
 - **Simple to implement** with minimal code changes (after `astrotomic/laravel-translatable` support)
 - Locale tabs to switch between different locale values of the same field
-- **Double click** on a tab to switch all fields to that locale
+- **Double-click** on a tab to switch all fields to that locale
 - Supports [nova-settings](https://github.com/outl1ne/nova-settings) package
 
 ## Known non-working fields
@@ -35,9 +44,20 @@ This [Laravel Nova](https://nova.laravel.com) allows you to make any input field
 
 ## Screenshots
 
-![Detail View](./docs/detail.png)
-![Form View](./docs/form.png)
-![Form View w/ Validation Errors](./docs/validation.png)
+<details open>
+  <summary>Form View</summary>
+  <img src="./docs/detail.png" alt="Detail view" />
+</details>
+
+<details>
+  <summary>Form View</summary>
+  <img src="./docs/form.png" alt="Form view" />
+</details>
+
+<details>
+  <summary>Form View w/ Validation Errors</summary>
+  <img src="./docs/validation.png" alt="Form view with validation errors" />
+</details>
 
 ## Installation
 
