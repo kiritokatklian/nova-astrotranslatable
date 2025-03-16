@@ -28,7 +28,7 @@
   "require": {
     "php": ">=8.2",
     "laravel/nova": "^5.0",
-    "astrotomic/laravel-translatable": "^11.10"
+    "astrotomic/laravel-translatable": "dev-l12-compatibility"
   },
   "require-dev": {
     "laravel/nova-devtool": "^1.0"
@@ -54,6 +54,10 @@
     {
       "type": "composer",
       "url": "https://nova.laravel.com"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/laravel-shift/laravel-translatable"
     }
   ],
   "autoload-dev": {
